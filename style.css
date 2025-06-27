@@ -1,116 +1,90 @@
-:root {
-  --bg-dark: #111827;
-  --bg-light: #1f2937;
-  --text-light: #f3f4f6;
-  --accent-color: #3b82f6;
-  --hover-color: #2563eb;
-  --search-bg: #374151;
-}
-
-/* ---------- Reset e base ---------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: var(--bg-dark);
-  color: var(--text-light);
-  min-height: 100vh;
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fdf6f0;
 }
 
-/* ---------- Navbar ---------- */
+/* Navbar */
 .navbar {
+  width: 100%;
+  background-color: #ffe4e1;
+  padding: 1rem 2rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 15px 30px;
-  background-color: var(--bg-light);
-  flex-wrap: wrap;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-/* Logo */
-.logo {
-  display: flex;
   align-items: center;
-  font-size: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.5rem;
   font-weight: bold;
+  color: #6d6875;
 }
 
-.logo-icon {
-  margin-right: 8px;
-}
-
-/* Menu */
-.nav-links {
-  list-style: none;
+.menu {
   display: flex;
-  gap: 20px;
+  gap: 1.5rem;
 }
 
-.nav-links li a {
+.menu a {
   text-decoration: none;
-  color: var(--text-light);
+  color: #6d6875;
+  font-weight: 500;
   transition: color 0.3s ease;
 }
 
-.nav-links li a:hover {
-  color: var(--accent-color);
+.menu a:hover {
+  color: #b5838d;
 }
 
-/* Barra de Pesquisa */
-.search-box input {
-  padding: 8px 12px;
-  border: none;
+/* Search bar */
+.search input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: var(--search-bg);
-  color: var(--text-light);
 }
 
-.search-box input::placeholder {
-  color: #9ca3af;
-}
-
-/* Menu Toggle (hamburguer) */
+/* Mobile toggle */
 .menu-toggle {
   display: none;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   cursor: pointer;
-  color: var(--text-light);
+  color: #6d6875;
 }
 
-/* ---------- Conteúdo Principal ---------- */
+/* Conteúdo principal */
 .main-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
-  text-align: center;
+  height: calc(100vh - 100px);
+  background-color: #f3e5f5;
 }
 
-.soon-image {
+.main-content img {
   max-width: 90%;
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  border: 5px dashed #d8a7b1;
+  padding: 1rem;
+  background-color: #ffffffd9;
 }
 
-/* ---------- Responsividade ---------- */
+/* Responsividade */
 @media (max-width: 768px) {
-  .nav-links {
+  .menu {
     display: none;
-    flex-direction: column;
     width: 100%;
-    background-color: var(--bg-light);
-    padding: 10px 0;
+    flex-direction: column;
+    margin-top: 1rem;
   }
 
-  .nav-links.active {
+  .menu.active {
     display: flex;
   }
 
@@ -118,12 +92,8 @@ body {
     display: block;
   }
 
-  .search-box {
+  .search {
     width: 100%;
-    margin-top: 10px;
-  }
-
-  .search-box input {
-    width: 100%;
+    margin-top: 1rem;
   }
 }
