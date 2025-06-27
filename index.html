@@ -1,41 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfólio - Navbar Responsiva</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- NAVBAR -->
+  <!-- Navbar Responsiva -->
   <nav class="navbar">
-    <div class="logo">MinhaLogo</div>
+    <!-- Logo -->
+    <div class="logo">
+      <span class="logo-icon">🚀</span>
+      <span class="logo-text">MeuPortfólio</span>
+    </div>
 
-    <ul class="menu" id="menu">
+    <!-- Ícone do menu mobile -->
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+    <!-- Menu de navegação -->
+    <ul class="nav-links" id="nav-links">
       <li><a href="#">Início</a></li>
+      <li><a href="#">Sobre</a></li>
       <li><a href="#">Projetos</a></li>
       <li><a href="#">Contato</a></li>
     </ul>
 
-    <div class="search">
-      <input type="text" placeholder="Buscar...">
+    <!-- Barra de pesquisa -->
+    <div class="search-box">
+      <input type="text" placeholder="Buscar..." />
     </div>
-
-    <!-- Botão do menu mobile -->
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
   </nav>
 
-  <!-- CORPO DA PÁGINA -->
-  <main class="content">
-    <img src="img/em-breve.png" alt="EM BREVE!" class="coming-soon">
+  <!-- Conteúdo principal -->
+  <main class="main-content">
+    <img src="img/em-breve.png" alt="EM BREVE!" class="soon-image" />
   </main>
 
-  <!-- SCRIPT PARA O MENU MOBILE -->
+  <!-- Script do menu responsivo -->
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.classList.toggle('active');
-    }
+    const toggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
   </script>
 </body>
 </html>
