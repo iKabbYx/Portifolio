@@ -1,18 +1,13 @@
-/portfolio-navbar
-│
-├── index.html
-├── style.css
-└── /img
-    └── em-breve.png  ← (imagem com a frase "EM BREVE!")
-
-root {
-  --cor-primaria: #1f2937;
-  --cor-secundaria: #4b5563;
-  --cor-texto: #f9fafb;
-  --cor-destaque: #10b981;
+:root {
+  --bg-dark: #111827;
+  --bg-light: #1f2937;
+  --text-light: #f3f4f6;
+  --accent-color: #3b82f6;
+  --hover-color: #2563eb;
+  --search-bg: #374151;
 }
 
-/* Reset básico */
+/* ---------- Reset e base ---------- */
 * {
   margin: 0;
   padding: 0;
@@ -21,89 +16,114 @@ root {
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f3f4f6;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  min-height: 100vh;
 }
 
-/* NAVBAR */
+/* ---------- Navbar ---------- */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--cor-primaria);
-  padding: 15px 20px;
-  color: var(--cor-texto);
+  padding: 15px 30px;
+  background-color: var(--bg-light);
   flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
+/* Logo */
 .logo {
-  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
   font-weight: bold;
 }
 
-.menu {
+.logo-icon {
+  margin-right: 8px;
+}
+
+/* Menu */
+.nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
 }
 
-.menu li a {
+.nav-links li a {
   text-decoration: none;
-  color: var(--cor-texto);
-  transition: color 0.3s;
+  color: var(--text-light);
+  transition: color 0.3s ease;
 }
 
-.menu li a:hover {
-  color: var(--cor-destaque);
+.nav-links li a:hover {
+  color: var(--accent-color);
 }
 
-/* BARRA DE PESQUISA */
-.search input {
-  padding: 7px 10px;
+/* Barra de Pesquisa */
+.search-box input {
+  padding: 8px 12px;
   border: none;
   border-radius: 5px;
+  background-color: var(--search-bg);
+  color: var(--text-light);
 }
 
-/* BOTÃO MOBILE */
+.search-box input::placeholder {
+  color: #9ca3af;
+}
+
+/* Menu Toggle (hamburguer) */
 .menu-toggle {
   display: none;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   cursor: pointer;
-  color: var(--cor-texto);
+  color: var(--text-light);
 }
 
-/* CONTEÚDO PRINCIPAL */
-.content {
+/* ---------- Conteúdo Principal ---------- */
+.main-content {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 80vh;
+  text-align: center;
 }
 
-.coming-soon {
+.soon-image {
   max-width: 90%;
   height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
-/* RESPONSIVIDADE */
+/* ---------- Responsividade ---------- */
 @media (max-width: 768px) {
-  .menu {
+  .nav-links {
     display: none;
     flex-direction: column;
     width: 100%;
-    background-color: var(--cor-secundaria);
-    margin-top: 10px;
+    background-color: var(--bg-light);
+    padding: 10px 0;
   }
 
-  .menu.active {
+  .nav-links.active {
     display: flex;
-  }
-
-  .search {
-    width: 100%;
-    margin-top: 10px;
   }
 
   .menu-toggle {
     display: block;
+  }
+
+  .search-box {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .search-box input {
+    width: 100%;
   }
 }
