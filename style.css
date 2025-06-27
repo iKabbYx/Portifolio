@@ -4,3 +4,106 @@
 ├── style.css
 └── /img
     └── em-breve.png  ← (imagem com a frase "EM BREVE!")
+
+root {
+  --cor-primaria: #1f2937;
+  --cor-secundaria: #4b5563;
+  --cor-texto: #f9fafb;
+  --cor-destaque: #10b981;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f3f4f6;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--cor-primaria);
+  padding: 15px 20px;
+  color: var(--cor-texto);
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: var(--cor-texto);
+  transition: color 0.3s;
+}
+
+.menu li a:hover {
+  color: var(--cor-destaque);
+}
+
+/* BARRA DE PESQUISA */
+.search input {
+  padding: 7px 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+/* BOTÃO MOBILE */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--cor-texto);
+}
+
+/* CONTEÚDO PRINCIPAL */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.coming-soon {
+  max-width: 90%;
+  height: auto;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--cor-secundaria);
+    margin-top: 10px;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .search {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
