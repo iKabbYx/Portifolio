@@ -1,4 +1,7 @@
-* {
+body {
+  cursor: url('https://www.vhv.rs/dpng/d/411-4112443_undertale-soul-png-transparent-background-determination-undertale-soul.png') 16 16, auto;
+}
+{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
