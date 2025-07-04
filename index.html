@@ -9,5 +9,67 @@
 <body>
   <!-- Tela de cutscene -->
   <div id="cutscene">
-    <video src="https://i.makeagif.com/media/10-29-2022/PRreA6.gif" autoplay muted></video>
+    <video src="cutscene.mp4" autoplay muted></video>
   </div>
+
+  <!-- Conteúdo principal escondido até a cutscene terminar -->
+  <div id="main-content" style="display:none;">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="minha-logo.png" alt="Logo" />
+        <span>Meu Portfólio</span>
+      </div>
+
+      <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+
+      <div class="search">
+        <input type="text" placeholder="Buscar..." />
+      </div>
+    </nav>
+
+    <!-- Seções -->
+    <section id="home" class="section">
+      <div class="container">
+        <img src="minha-foto.jpg" alt="Minha Foto" class="foto-pessoal" />
+        <div class="descricao">
+          <h1>Olá, eu sou [Seu Nome]!</h1>
+          <p>Sou desenvolvedor web e este é meu portfólio profissional.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section">
+      <h2>Sobre Mim</h2>
+      <p>Conteúdo sobre você...</p>
+    </section>
+
+    <section id="projetos" class="section">
+      <h2>Meus Projetos</h2>
+      <p>Conteúdo dos projetos...</p>
+    </section>
+
+    <section id="contato" class="section">
+      <h2>Contato</h2>
+      <p>Informações de contato...</p>
+    </section>
+  </div>
+
+  <!-- Script para exibir o conteúdo após a cutscene -->
+  <script>
+    const cutscene = document.getElementById('cutscene');
+    const mainContent = document.getElementById('main-content');
+    const video = cutscene.querySelector('video');
+
+    video.onended = () => {
+      cutscene.style.display = 'none';
+      mainContent.style.display = 'block';
+    };
+  </script>
+</body>
+</html>
