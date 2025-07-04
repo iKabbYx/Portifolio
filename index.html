@@ -63,7 +63,13 @@
   <script>
     const cutscene = document.getElementById('cutscene');
     const mainContent = document.getElementById('main-content');
-    const video = cutscene.querySelector('video');
+
+   // Espera 6 segundos (ajuste conforme o tempo do gif)
+  setTimeout(() => {
+    cutscene.style.display = 'none';
+    mainContent.style.display = 'block';
+  }, 6000);
+</script>
 
     video.onended = () => {
       cutscene.style.display = 'none';
