@@ -8,10 +8,9 @@
 </head>
 <body>
   <!-- Tela de cutscene -->
-  <div id="cutscene">
-    <video src="cutscene.mp4" autoplay muted></video>
-  </div>
-
+<div id="cutscene">
+  <img src="https://i.makeagif.com/media/10-29-2022/PRreA6.gif" alt="Cutscene" />
+</div>
   <!-- Conteúdo principal escondido até a cutscene terminar -->
   <div id="main-content" style="display:none;">
     <!-- Navbar -->
@@ -61,15 +60,15 @@
   </div>
 
   <!-- Script para exibir o conteúdo após a cutscene -->
-  <script>
-    const cutscene = document.getElementById('cutscene');
-    const mainContent = document.getElementById('main-content');
-    const video = cutscene.querySelector('video');
+<script>
+  const cutscene = document.getElementById('cutscene');
+  const mainContent = document.getElementById('main-content');
 
-    video.onended = () => {
-      cutscene.style.display = 'none';
-      mainContent.style.display = 'block';
-    };
+  // Espera 6 segundos (ajuste conforme o tempo do gif)
+  setTimeout(() => {
+    cutscene.style.display = 'none';
+    mainContent.style.display = 'block';
+  }, 6000);
   </script>
 </body>
 </html>
