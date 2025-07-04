@@ -7,18 +7,17 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-  <!-- Cutscene (some após 6 segundos com CSS) -->
+  <!-- Tela de cutscene -->
   <div id="cutscene">
-    <img src="https://i.makeagif.com/media/10-29-2022/PRreA6.gif" alt="Cutscene" />
+    <video src="cutscene.mp4" autoplay muted></video>
   </div>
 
-  <!-- Conteúdo principal -->
-  <div id="main-content">
+  <!-- Conteúdo principal escondido até a cutscene terminar -->
+  <div id="main-content" style="display:none;">
     <!-- Navbar -->
     <nav class="navbar">
       <div class="logo">
-        <img src="https://www.vhv.rs/dpng/d/411-4112443_undertale-soul-png-transparent-background-determination-undertale-soul.png" alt="Logo" />
+        <img src="minha-logo.png" alt="Logo" />
         <span>Meu Portfólio</span>
       </div>
 
@@ -61,5 +60,16 @@
     </section>
   </div>
 
+  <!-- Script para exibir o conteúdo após a cutscene -->
+  <script>
+    const cutscene = document.getElementById('cutscene');
+    const mainContent = document.getElementById('main-content');
+    const video = cutscene.querySelector('video');
+
+    video.onended = () => {
+      cutscene.style.display = 'none';
+      mainContent.style.display = 'block';
+    };
+  </script>
 </body>
 </html>
