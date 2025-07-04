@@ -7,16 +7,18 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Tela de cutscene -->
-<div id="cutscene">
-  <img src="https://i.makeagif.com/media/10-29-2022/PRreA6.gif" alt="Cutscene" />
-</div>
-  <!-- Conteúdo principal escondido até a cutscene terminar -->
-  <div id="main-content" style="display:none;">
+
+  <!-- Cutscene (some após 6 segundos com CSS) -->
+  <div id="cutscene">
+    <img src="https://i.makeagif.com/media/10-29-2022/PRreA6.gif" alt="Cutscene" />
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div id="main-content">
     <!-- Navbar -->
     <nav class="navbar">
       <div class="logo">
-        <img src="minha-logo.png" alt="Logo" />
+        <img src="https://www.vhv.rs/dpng/d/411-4112443_undertale-soul-png-transparent-background-determination-undertale-soul.png" alt="Logo" />
         <span>Meu Portfólio</span>
       </div>
 
@@ -59,22 +61,5 @@
     </section>
   </div>
 
-  <!-- Script para exibir o conteúdo após a cutscene -->
-  <script>
-  const cutscene = document.getElementById('cutscene');
-  const mainContent = document.getElementById('main-content');
-
-  // Espera 7 segundos (ajuste conforme o tempo do gif)
-  setTimeout(() => {
-    cutscene.style.display = 'none';
-    mainContent.style.display = 'block';
-  }, 7000); // 7000ms = 7 segundos
-</script>
-
-    video.onended = () => {
-      cutscene.style.display = 'none';
-      mainContent.style.display = 'block';
-    };
-  </script>
 </body>
 </html>
