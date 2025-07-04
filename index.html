@@ -61,14 +61,14 @@
 
   <!-- Script para exibir o conteúdo após a cutscene -->
   <script>
-    const cutscene = document.getElementById('cutscene');
-    const mainContent = document.getElementById('main-content');
+  const cutscene = document.getElementById('cutscene');
+  const mainContent = document.getElementById('main-content');
 
-   // Espera 6 segundos (ajuste conforme o tempo do gif)
+  // Espera 7 segundos (ajuste conforme o tempo do gif)
   setTimeout(() => {
     cutscene.style.display = 'none';
     mainContent.style.display = 'block';
-  }, 6000);
+  }, 7000); // 7000ms = 7 segundos
 </script>
 
     video.onended = () => {
