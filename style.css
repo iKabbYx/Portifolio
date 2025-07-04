@@ -31,12 +31,6 @@ body {
   object-fit: cover;
 }
 
-#cutscene img {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-}
-
 /* Navbar */
 .navbar {
   background-color: var(--roxo);
