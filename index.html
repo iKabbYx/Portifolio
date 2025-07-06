@@ -3,17 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Logo - Meu Portfólio</title>
+  <title>UNDERVERSE</title>
+
+  <!-- Biblioteca de partículas (se quiser usar depois) -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+
+  <!-- Link para o CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
   <!-- Tela de cutscene -->
   <div id="cutscene">
     <img src="https://i.makeagif.com/media/10-29-2022/PRreA6.gif" alt="Cutscene" />
   </div>
 
   <!-- Conteúdo principal escondido até a cutscene terminar -->
-  <div id="main-content" style="display:none;">
+  <div id="main-content" style="display: none;">
     <!-- Navbar -->
     <nav class="navbar">
       <div class="logo">
@@ -65,7 +71,6 @@
     const cutscene = document.getElementById('cutscene');
     const mainContent = document.getElementById('main-content');
 
-    // Espera 6 segundos
     setTimeout(() => {
       cutscene.style.display = 'none';
       mainContent.style.display = 'block';
