@@ -201,4 +201,9 @@ section p {
     font-size: 2.5rem;
     padding: 10px 20px;
   }
+  
+.logo-img {
+  height: 40px;
+  width: auto;
+  }
 }
