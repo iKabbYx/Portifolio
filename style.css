@@ -13,7 +13,7 @@ body::before {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHZ4bDZyOXVla29iZWVkdDZhcHE0NWhzMjF1c3R6NnFrN2N0Z3oxMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3o6ZsUjzRfakLfwG3K/giphy.gif') center center / cover no-repeat;
+  background: url('https://media1.tenor.com/m/MBiuSzL39j4AAAAd/underverse-xtale.gif') center center / cover no-repeat;
   z-index: -1;
   pointer-events: none;
 }
