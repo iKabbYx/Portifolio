@@ -13,8 +13,9 @@ body::before {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: url('https://media1.tenor.com/m/MBiuSzL39j4AAAAd/underverse-xtale.gif') center center / cover no-repeat;
+  background: url('SEU-GIF-DE-FUNDO.gif') center center / cover no-repeat;
   z-index: -1;
+  pointer-events: none;
 }
 
 body {
