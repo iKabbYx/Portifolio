@@ -207,10 +207,11 @@ section p {
     width: auto;
   }
 }
-/*Ajuste de logo em qualquer aparelho */
-.logo-img {
-  height: 40px;
-  width: auto;
-  vertical-align: middle;
-  }
+/* Força o tamanho da logo funcionar corretamente em qualquer tela */
+.logo img {
+  height: 40px !important;
+  width: auto !important;
+  max-height: 40px;
+  display: block;
 }
+
