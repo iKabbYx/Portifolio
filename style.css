@@ -29,6 +29,9 @@ body {
   inset: 0;
   background: black;
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #cutscene img {
@@ -37,7 +40,6 @@ body {
   object-fit: cover;
   display: block;
 }
-
 
 /* Navbar */
 .navbar {
