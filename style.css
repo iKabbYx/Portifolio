@@ -202,8 +202,10 @@ section p {
     padding: 10px 20px;
   }
   
+/* --- Estilo da imagem da logo --- */
 .logo-img {
   height: 40px;
   width: auto;
+  vertical-align: middle;
   }
 }
