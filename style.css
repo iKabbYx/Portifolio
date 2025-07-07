@@ -264,6 +264,25 @@ section p {
     max-width: 90%;
   }
 }
+/* Porta branca que leva a outro site */
+.door-link {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.door-image {
+  width: 60px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.door-image:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
 
 
 
