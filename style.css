@@ -216,34 +216,34 @@ section p {
 }
 
 .hero {
-  position: relative;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 5%;
+  height: 100vh;
+  padding-left: 40px; /* distância da borda esquerda */
 }
 
-.hero-image {
+.hero-img {
   max-width: 400px;
   width: 100%;
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 15px var(--roxo);
   animation: slideIn 2s ease-out;
+  border-radius: 10px;
+  box-shadow: 0 0 20px var(--roxo);
 }
 
-/* Responsivo para celular e tablet */
+/* Responsivo */
 @media (max-width: 768px) {
   .hero {
     justify-content: center;
     padding-left: 0;
   }
 
-  .hero-image {
+  .hero-img {
     max-width: 90%;
   }
 }
+
 
 
 
