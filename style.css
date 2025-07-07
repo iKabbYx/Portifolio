@@ -244,6 +244,41 @@ section p {
   }
 }
 
+/* Caixa de texto centralizada */
+.center-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px; /* Ajuste a altura conforme necessário */
+  padding: 0 20px;
+}
+
+.center-input textarea {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border: 2px solid transparent;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  transition: border 0.3s, box-shadow 0.3s;
+  width: 100%;
+  max-width: 600px;
+  height: 150px;
+  resize: vertical;
+}
+
+.center-input textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.center-input textarea:hover,
+.center-input textarea:focus {
+  border: 2px solid var(--roxo);
+  outline: none;
+  box-shadow: 0 0 10px var(--roxo);
+}
+
+
 
 
 
