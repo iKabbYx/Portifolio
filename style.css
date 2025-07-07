@@ -215,4 +215,61 @@ section p {
   margin-right: 20px;
 }
 
+.hero-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+  padding-left: 5%;
+}
+
+.hero-image {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+  border-radius: 10px;
+  box-shadow: 0 0 15px var(--roxo);
+}
+
+.frame {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.frame-top-left {
+  top: 0;
+  left: 0;
+  transform: rotate(0deg);
+}
+
+.frame-bottom-left {
+  bottom: 0;
+  left: 0;
+  transform: rotate(180deg);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero-content {
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  .hero-image {
+    max-width: 90%;
+  }
+
+  .frame {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
 
