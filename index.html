@@ -100,23 +100,38 @@
   </div>
 
   <script>
-  document.querySelector(".door-link").addEventListener("click", function (e) {
+document.querySelector(".door-link").addEventListener("click", function (e) {
   e.preventDefault(); 
 
   const overlay = document.getElementById("interacao-overlay");
-  const fala = document.getElementById("fala-gif");
+  const fala = document.getElementById("fala-gif"); // primeira fala (gif)
   const botoes = document.getElementById("botoes-batalha");
+
+  // Alvo da segunda imagem (os 3 pontos)
+  const segundaFala = document.createElement("img");
+  segundaFala.src = "https://media.discordapp.net/attachments/907048568286756895/1392158240195874917/undertale_text_box_1.gif?ex=686e83e5&is=686d3265&hm=c8926f3b90c827c87db6544c826a590979e913f02f4c31ef8abc276b51ec6dbe&=&width=743&height=210"; // coloque o caminho correto
+  segundaFala.alt = "Fala com ...";
+  segundaFala.classList.add("fala"); // mantém o estilo da fala
+  segundaFala.style.display = "none";
+
+  const content = document.querySelector(".overlay-content");
+  content.insertBefore(segundaFala, botoes); // adiciona antes dos botões
 
   overlay.classList.remove("hidden");
   fala.style.display = "block";
   botoes.classList.add("hidden");
+  document.body.style.overflow = "hidden";
 
-  document.body.style.overflow = "hidden"; // Impede scroll da página
-
+  // Após 4s, esconde a primeira fala e mostra a segunda (. . .)
   setTimeout(function () {
     fala.style.display = "none";
-    botoes.classList.remove("hidden"); // Mostra a barra e os botões ao mesmo tempo
-  }, 4000); // 4 segundos de fala
+    segundaFala.style.display = "block";
+
+    // A segunda fala permanece, e os botões aparecem
+    setTimeout(function () {
+      botoes.classList.remove("hidden");
+    }, 4000); // ou aumente esse tempo se quiser que os botões demorem mais
+  }, 4000);
 });
 </script>
 
