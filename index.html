@@ -80,5 +80,33 @@
     </div>
   </section>
 
+  </section>
+
+  <!-- Tela preta interativa -->
+  <div id="interacao-overlay" class="overlay hidden">
+    <div class="overlay-content">
+      <img id="personagem-img" src="personagem.png" alt="Personagem" class="personagem">
+      <img id="fala-gif" src="fala1.gif" alt="Fala do personagem" class="fala">
+
+      <div id="botoes-batalha" class="botoes hidden">
+        <button class="botao-batalha">FIGHT</button>
+        <button class="botao-batalha">ACT</button>
+        <button class="botao-batalha">MERCY</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Ao clicar na porta, mostra a overlay
+    document.querySelector(".door-link").addEventListener("click", function (e) {
+      e.preventDefault();
+      document.getElementById("interacao-overlay").classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+      setTimeout(function () {
+        document.getElementById("botoes-batalha").classList.remove("hidden");
+      }, 4000); // tempo do gif
+    });
+  </script>
+
 </body>
 </html>
