@@ -340,6 +340,19 @@ section p {
   border-color: var(--roxo);
 }
 
+.botao-batalha-img {
+  width: 90px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.botao-batalha-img:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px var(--roxo));
+}
+
+
 
 
 
