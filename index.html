@@ -99,29 +99,41 @@
     </div>
   </div>
 
-  <script>
-document.querySelector(".door-link").addEventListener("click", function (e) {
-  e.preventDefault();
+<script>
+  document.querySelector(".door-link").addEventListener("click", function (e) {
+    e.preventDefault();
 
-  const overlay = document.getElementById("interacao-overlay");
-  const falaGif = document.getElementById("fala-gif");
-  const falaPontos = document.getElementById("fala-pontos");
+    const overlay = document.getElementById("interacao-overlay");
+    const falaGif = document.getElementById("fala-gif");
+    const falaPontos = document.getElementById("fala-pontos");
 
-  overlay.classList.remove("hidden");
-  falaGif.classList.remove("hidden");
-  falaPontos.classList.add("hidden");
-  document.body.style.overflow = "hidden";
+    overlay.classList.remove("hidden");
+    falaGif.classList.remove("hidden");
 
-  // Tempo em milissegundos do seu gif
-  const gifDuracaoMs = 4000;
+    // Verifica se falaPontos existe antes de manipular
+    if (falaPontos) {
+      falaPontos.classList.add("hidden");
+    }
 
-  setTimeout(function () {
-    falaGif.classList.add("hidden");
-    falaPontos.classList.remove("hidden");
-    // Espera nova ação manual
-  }, gifDuracaoMs);
-});
-    <script>
+    document.body.style.overflow = "hidden";
+
+    const gifDuracaoMs = 4000;
+
+    setTimeout(function () {
+      falaGif.classList.add("hidden");
+      if (falaPontos) {
+        falaPontos.classList.remove("hidden");
+      }
+    }, gifDuracaoMs);
+  });
+
+  // Garante que o overlay esteja escondido ao carregar a página
+  window.addEventListener("DOMContentLoaded", () => {
+    const overlay = document.getElementById("interacao-overlay");
+    overlay.classList.add("hidden");
+    document.body.style.overflow = "auto";
+  });
+</script>
 
 </body>
 </html>
