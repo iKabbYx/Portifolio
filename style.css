@@ -283,20 +283,21 @@ section p {
   cursor: pointer;
 }
 
-/* Overlay tela preta */
+/* Overlay tela preta menor e centralizada */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: black;
+  background: transparent; /* antes era preto */
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  overflow: hidden;
+  overflow: auto; /* antes era hidden */
 }
+
 
 /* Esconde a overlay por padrão */
 .hidden {
@@ -304,45 +305,47 @@ section p {
 }
 
 .overlay-content {
+  background-color: #000; /* fundo preto */
+  width: 600px;
+  max-width: 90vw; /* responsivo */
+  height: 400px;
+  max-height: 80vh;
+  border-radius: 15px;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  box-shadow: 0 0 20px var(--roxo);
+  color: white;
   text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .personagem {
-  width: 200px;
-  margin-bottom: 20px;
+  width: 180px;
+  height: auto;
+  margin-bottom: 15px;
 }
 
 .fala {
-  width: 80%;
-  max-width: 600px;
-  margin-bottom: 30px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  flex-grow: 1; /* ocupa espaço vertical */
+  object-fit: contain;
 }
 
 .botoes {
   display: flex;
   gap: 20px;
   justify-content: center;
-}
-
-.botao-batalha {
-  font-size: 1.5rem;
-  padding: 10px 20px;
-  background: black;
-  color: white;
-  border: 2px solid white;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.botao-batalha:hover {
-  transform: scale(1.2);
-  color: var(--roxo);
-  border-color: var(--roxo);
+  flex-wrap: wrap; /* permite quebra em telas menores */
 }
 
 .botao-batalha-img {
-  width: 90px;
-  height: auto;
+  width: 80px;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
