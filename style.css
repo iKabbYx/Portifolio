@@ -1,5 +1,5 @@
 :root {
-  --roxo: #9932cc;
+--roxo: #9932cc;
   --preto: #111;
   --fundo-opaco: rgba(255, 255, 255, 0.8);
 }
@@ -365,27 +365,3 @@ section p {
   height: auto;
   margin-bottom: 20px;
 }
-
-/* Aumenta a caixa de interação conforme conteúdo */
-.overlay-content {
-  max-width: none;
-  width: 100%;
-  height: auto;
-  max-height: none;
-}
-
-/* Faz os botões de batalha ficarem maiores */
-.botao-batalha-img {
-  width: 120px;
-  height: auto;
-}
-
-
-
-
-
-
-
-
-
-
