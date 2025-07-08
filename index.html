@@ -101,23 +101,23 @@
 
   <script>
   document.querySelector(".door-link").addEventListener("click", function (e) {
-    e.preventDefault(); 
+  e.preventDefault(); 
 
-    const overlay = document.getElementById("interacao-overlay");
-    const fala = document.getElementById("fala-gif");
-    const botoes = document.getElementById("botoes-batalha");
+  const overlay = document.getElementById("interacao-overlay");
+  const fala = document.getElementById("fala-gif");
+  const botoes = document.getElementById("botoes-batalha");
 
-    overlay.classList.remove("hidden");
-    fala.style.display = "block";
-    botoes.classList.add("hidden");
+  overlay.classList.remove("hidden");
+  fala.style.display = "block";
+  botoes.classList.add("hidden");
 
-    document.body.style.overflow = "hidden"; // Impede scroll da página
+  document.body.style.overflow = "hidden"; // Impede scroll da página
 
-    setTimeout(function () {
-      fala.style.display = "none";
-      botoes.classList.remove("hidden");
-    }, 4000); // Mostra botões depois da fala
-  });
+  setTimeout(function () {
+    fala.style.display = "none";
+    botoes.classList.remove("hidden"); // Mostra a barra e os botões ao mesmo tempo
+  }, 4000); // 4 segundos de fala
+});
 </script>
 
 </body>
