@@ -99,9 +99,11 @@
   <script>
     // Ao clicar na porta, mostra a overlay
     document.querySelector(".door-link").addEventListener("click", function (e) {
-      e.preventDefault();
+      e.preventDefault(); // Impede o clique padrão
       document.getElementById("interacao-overlay").classList.remove("hidden");
+      // Impede o scroll na página
       document.body.style.overflow = "hidden";
+      // Espera o gif da fala terminar (exemplo: 4 segundos) para mostrar os botões
       setTimeout(function () {
         document.getElementById("botoes-batalha").classList.remove("hidden");
       }, 4000); // tempo do gif
