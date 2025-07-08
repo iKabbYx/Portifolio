@@ -359,6 +359,13 @@ section p {
   filter: drop-shadow(0 0 8px var(--roxo));
 }
 
+.barra-status {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
 
 
 
