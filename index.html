@@ -101,39 +101,34 @@
 
   <script>
 document.querySelector(".door-link").addEventListener("click", function (e) {
-  e.preventDefault(); 
+  e.preventDefault();
 
   const overlay = document.getElementById("interacao-overlay");
-  const fala = document.getElementById("fala-gif"); // primeira fala (gif)
-  const botoes = document.getElementById("botoes-batalha");
-
-  // Alvo da segunda imagem (os 3 pontos)
-  const segundaFala = document.createElement("img");
-  segundaFala.src = "https://media.discordapp.net/attachments/907048568286756895/1392158240195874917/undertale_text_box_1.gif?ex=686e83e5&is=686d3265&hm=c8926f3b90c827c87db6544c826a590979e913f02f4c31ef8abc276b51ec6dbe&=&width=743&height=210"; // coloque o caminho correto
-  segundaFala.alt = "Fala com ...";
-  segundaFala.classList.add("fala"); // mantém o estilo da fala
-  segundaFala.style.display = "none";
-
-  const content = document.querySelector(".overlay-content");
-  content.insertBefore(segundaFala, botoes); // adiciona antes dos botões
+  const falaGif = document.getElementById("fala-gif");
+  const falaPontos = document.getElementById("fala-pontos");
 
   overlay.classList.remove("hidden");
-  fala.style.display = "block";
-  botoes.classList.add("hidden");
+  falaGif.classList.remove("hidden");
+  falaPontos.classList.add("hidden");
   document.body.style.overflow = "hidden";
 
-  // Após 4s, esconde a primeira fala e mostra a segunda (. . .)
-  setTimeout(function () {
-    fala.style.display = "none";
-    segundaFala.style.display = "block";
+  // Tempo em milissegundos do seu gif
+  const gifDuracaoMs = 4000;
 
-    // A segunda fala permanece, e os botões aparecem
-    setTimeout(function () {
-      botoes.classList.remove("hidden");
-    }, 4000); // ou aumente esse tempo se quiser que os botões demorem mais
-  }, 4000);
+  setTimeout(function () {
+    falaGif.classList.add("hidden");
+    falaPontos.classList.remove("hidden");
+    // Espera nova ação manual
+  }, gifDuracaoMs);
 });
 </script>
+
+<div id="interacao-overlay" class="hidden">
+  <div class="overlay-content">
+    <img id="fala-gif" src="https://media.discordapp.net/attachments/907048568286756895/1392158240195874917/undertale_text_box_1.gif?ex=686e83e5&is=686d3265&hm=c8926f3b90c827c87db6544c826a590979e913f02f4c31ef8abc276b51ec6dbe&=&width=743&height=210" class="fala" alt="Fala do personagem">
+    <img id="fala-pontos" src="https://media.discordapp.net/attachments/907048568286756895/1392153264350429404/undertale_text_box_1.png?ex=686e7f43&is=686d2dc3&hm=6948da3810b315824447cc8c1857917a560f91325a95c88fdab8292ace19c4f9&=&format=webp&quality=lossless&width=723&height=190" class="fala hidden" alt="Esperando ação">
+  </div>
+</div>
 
 </body>
 </html>
