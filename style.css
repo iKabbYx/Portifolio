@@ -290,7 +290,7 @@ section p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7); /* ESCURECE FUNDO */
+  background: rgba(0, 0, 0, 0.4); /* ESCURECE FUNDO */
   display: flex;
   align-items: center;
   justify-content: center;
