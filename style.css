@@ -4,6 +4,14 @@
   --fundo-opaco: rgba(255, 255, 255, 0.8);
 }
 
+@font-face {
+  font-family: 'Determination Mono';
+  src: url('./Determination_Mono_Web_Regular/determinationmonoweb-webfont.woff') format('woff'),
+       url('./Determination_Mono_Web_Regular/determinationmonoweb-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -371,5 +379,15 @@ section p {
   z-index: -1;
   opacity: 1;
   pointer-events: none;
+}
+
+/* Aplica a fonte do Undertale no conteúdo visível */
+body:not(.overlay) *,
+.hero-text-box,
+section,
+section *:not(.overlay *),
+.navbar,
+.navbar * {
+  font-family: 'Determination Mono', monospace !important;
 }
 
