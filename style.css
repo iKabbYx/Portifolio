@@ -365,3 +365,16 @@ section p {
   height: auto;
   margin-bottom: 20px;
 }
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 1;
+  pointer-events: none;
+}
+
