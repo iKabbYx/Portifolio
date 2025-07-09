@@ -24,11 +24,13 @@
   scroll-behavior: smooth;
 }
 
-html, body {
+html {
   height: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body:not(.overlay) {
+  font-family: 'Determination Mono', monospace;
+}
 /* NAVBAR */
 .navbar {
   position: fixed;
