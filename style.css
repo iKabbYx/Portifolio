@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Determination Mono';
+  src: url('DeterminationMono.ttf') format('truetype');
+}
+
 :root {
 --roxo: #9932cc;
   --preto: #111;
