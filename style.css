@@ -143,14 +143,15 @@ h2 {
 }
 
 section p {
-  color: var(--preto);
+  color: white;
   font-size: 1.2rem;
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
-  background: var(--fundo-opaco);
-  padding: 15px;
-  border-radius: 10px;
+  background: none;
+  padding: 0; /* ou 5px, para um pouco de espaçamento */
+  border-radius: 10px; /* se não tiver fundo, borda arredondada não será visível */
+  text-shadow: 1px 1px 2px black;
 }
 
 /* CURIOSIDADES */
