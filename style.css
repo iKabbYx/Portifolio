@@ -194,8 +194,10 @@ section p {
 }
 
 .curiosidade-box p {
-  color: var(--preto);
+  color: white;
   font-size: 0.95rem;
+  background: none;
+  text-shadow: 1px 1px 2px black;
 }
 
 /* ANIMAÇÕES */
