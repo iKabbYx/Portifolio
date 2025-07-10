@@ -533,4 +533,12 @@ section *:not(.overlay *),
   }
 }
 
+/* Reduz tamanho das imagens grandes */
+.imagem-projeto,
+.caixa-contato img {
+  max-height: 150px; /* ajuste esse valor como quiser */
+  object-fit: contain;
+}
+
+
 
