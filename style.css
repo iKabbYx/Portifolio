@@ -126,7 +126,12 @@ body:not(.overlay) {
   border-radius: 15px;
 }
 
-
+/* SEÇÕES */
+section {
+  padding: 100px 20px;
+  min-height: 100vh;
+  background-color: transparent;
+}
 
 h2 {
   text-align: center;
