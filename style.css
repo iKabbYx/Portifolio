@@ -505,6 +505,11 @@ section *:not(.overlay *),
   animation: slideIn 2s ease-out;
 }
 
+.caixa-contato p {
+  word-break: break-word;
+  text-align: center;
+}
+
 .caixa-contato img {
   width: 140px;
   height: auto;
