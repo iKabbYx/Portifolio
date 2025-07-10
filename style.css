@@ -506,6 +506,10 @@ section *:not(.overlay *),
 }
 
 .caixa-contato p {
+  overflow-wrap: anywhere;
+}
+
+.caixa-contato p {
   word-break: break-word;
   text-align: center;
 }
