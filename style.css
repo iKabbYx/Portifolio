@@ -163,14 +163,18 @@ section p {
 }
 
 .curiosidade-box {
-  background-color: var(--fundo-opaco);
+  background: rgba(0, 0, 0, 0.8); /* Fundo preto opaco */
+  color: white; /* Letras brancas */
   border-radius: 15px;
-  padding: 15px;
-  width: 250px;
+  padding: 20px;
+  width: 280px;
   text-align: center;
   box-shadow: 0 0 10px var(--roxo);
   transition: transform 0.3s ease;
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
+
 
 .curiosidade-box:hover {
   transform: translateY(-10px);
