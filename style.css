@@ -415,4 +415,62 @@ section *:not(.overlay *),
   text-align: center;
 }
 
+.caixa-projeto {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--roxo);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 250px;
+  text-align: center;
+  animation: slideIn 2s ease-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.caixa-projeto img.imagem-projeto {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 2px solid var(--roxo);
+}
+
+/* Posicionamento */
+.curiosidades-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 40px;
+}
+
+/* Ajustes por posição */
+.caixa-projeto.esquerda {
+  align-self: flex-start;
+}
+
+.caixa-projeto.centro {
+  margin: 0 auto;
+}
+
+.caixa-projeto.direita {
+  align-self: flex-end;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .curiosidades-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .caixa-projeto {
+    max-width: 90%;
+  }
+}
+
 
