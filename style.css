@@ -129,9 +129,11 @@ body:not(.overlay) {
 /* SEÇÕES */
 section {
   padding: 100px 20px;
+  margin-top: 60px; /* ← Adiciona espaço antes de cada seção */
   min-height: 100vh;
   background-color: transparent;
 }
+
 
 h2 {
   text-align: center;
