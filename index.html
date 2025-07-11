@@ -134,20 +134,38 @@
 <script>
   const botaoFight = document.getElementById("botao-fight");
   const fala2 = document.getElementById("fala-gif-2");
+  const videoFinal = document.getElementById("video-final");
+  const telaPreta = document.getElementById("tela-preta-final");
 
   botaoFight.addEventListener("click", function () {
-    // Troca a imagem do botão FIGHT
+    // 1. Troca o botão FIGHT por quebrado
     botaoFight.src = "https://files.catbox.moe/bs73m5.png";
 
-    // Mostra a segunda fala
+    // 2. Mostra a segunda fala do personagem
     fala2.classList.remove("hidden");
 
-    // Esconde a fala depois de 4 segundos
+    // 3. Após 4s, esconde fala e toca o vídeo
     setTimeout(() => {
       fala2.classList.add("hidden");
+      videoFinal.classList.remove("hidden");
+
+      // 4. Toca o vídeo com som
+      const playPromise = videoFinal.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          console.error("Erro ao reproduzir vídeo:", error);
+        });
+      }
+
+      // 5. Após 19s de vídeo, mostra a tela preta
+      setTimeout(() => {
+        videoFinal.classList.add("hidden");
+        telaPreta.classList.remove("hidden");
+      }, 19000);
     }, 4000);
   });
 </script>
+
 
 <!-- Vídeo com som (não muted) -->
 <video id="video-final" class="hidden" autoplay playsinline>
