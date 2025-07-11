@@ -154,7 +154,7 @@
       video.classList.remove("hidden");
       video.play().catch(error => {
         console.error("Erro ao tentar reproduzir o vídeo:", error);
-        console.error("Erro ao tentar reproduzir o vídeo:", error);
+        alert("Seu navegador bloqueou a reprodução automática do vídeo. Tente clicar novamente.");
       });
     }, 4000);
   });
