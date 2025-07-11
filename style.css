@@ -116,7 +116,9 @@ body:not(.overlay) {
   padding: 40px;
   background: url('https://i.pinimg.com/originals/1d/50/7a/1d507ad3deefcbb36d1620d6c21043ef.jpg') no-repeat center center/cover;
   box-sizing: border-box;
+  scroll-margin-top: 100px; /* evita ser escondido pela navbar */
 }
+
 
 .hero-img {
   max-width: 400px;
