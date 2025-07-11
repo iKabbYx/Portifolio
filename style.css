@@ -548,6 +548,25 @@ section *:not(.overlay *),
   max-height: 150px; /* ajuste esse valor como quiser */
   object-fit: contain;
 }
-
+/* Video final */
+#video-final {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 10000;
+}
+/* Tela Preta Final */
+#tela-preta-final {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  z-index: 10001;
+}
 
 
