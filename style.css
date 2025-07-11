@@ -580,4 +580,13 @@ section *:not(.overlay *),
   z-index: 9999;
 }
 
+#video-final.hidden {
+  display: none;
+}
+
+#tela-preta-final.hidden {
+  display: none;
+}
+
+
 
