@@ -134,43 +134,28 @@
 <script>
   const botaoFight = document.getElementById("botao-fight");
   const fala2 = document.getElementById("fala-gif-2");
-  const videoFinal = document.getElementById("video-final");
+  const video = document.getElementById("video-final");
   const telaPreta = document.getElementById("tela-preta-final");
 
   botaoFight.addEventListener("click", function () {
-    // Troca o botão FIGHT pela versão quebrada
+    // Troca imagem do botão FIGHT
     botaoFight.src = "https://files.catbox.moe/bs73m5.png";
 
-    // Mostra a fala 2
+    // Mostra a segunda fala (4s)
     fala2.classList.remove("hidden");
 
-    // Após 4 segundos, oculta a fala e exibe o vídeo com som
+    // Após 4s, esconde fala e mostra vídeo
     setTimeout(() => {
       fala2.classList.add("hidden");
-      
-      // Mostra o vídeo na tela
-      videoFinal.classList.remove("hidden");
+      video.classList.remove("hidden");
+      video.play();
+    }, 4000);
 
-      // Ativa o som (caso não esteja explícito)
-      videoFinal.muted = false;
-
-      // Força o vídeo a começar a tocar
-      const playPromise = videoFinal.play();
-
-      if (playPromise !== undefined) {
-        playPromise.then(() => {
-          console.log("Vídeo começou a tocar!");
-        }).catch(error => {
-          console.error("Erro ao reproduzir vídeo:", error);
-        });
-      }
-
-      // Após 19s, troca para tela preta
-      setTimeout(() => {
-        videoFinal.classList.add("hidden");
-        telaPreta.classList.remove("hidden");
-      }, 19000); // 19 segundos
-    }, 4000); // 4 segundos após a fala
+    // Quando o vídeo terminar, mostrar a tela preta
+    video.addEventListener("ended", () => {
+      video.classList.add("hidden");
+      telaPreta.classList.remove("hidden");
+    });
   });
 </script>
 
