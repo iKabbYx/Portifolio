@@ -152,7 +152,10 @@
     setTimeout(() => {
       fala2.classList.add("hidden");
       video.classList.remove("hidden");
-      video.play();
+      video.play().catch(error => {
+        console.error("Erro ao tentar reproduzir o vídeo:", error);
+        console.error("Erro ao tentar reproduzir o vídeo:", error);
+      });
     }, 4000);
   });
 </script>
@@ -160,7 +163,7 @@
 
 
 <!-- Vídeo com som (não muted) -->
-<video id="video-final" class="hidden" autoplay playsinline>
+<video id="video-final" class="hidden" playsinline>
   <source src="https://files.catbox.moe/jxy6bk.mp4" type="video/mp4">
 </video>
 
