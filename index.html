@@ -137,25 +137,23 @@
   const video = document.getElementById("video-final");
   const telaPreta = document.getElementById("tela-preta-final");
 
-  botaoFight.addEventListener("click", function () {
-    // Troca imagem do botão FIGHT
-    botaoFight.src = "https://files.catbox.moe/bs73m5.png";
+  // Garante que não duplique o evento de 'ended'
+  if (video) {
+    video.addEventListener("ended", () => {
+      video.classList.add("hidden");
+      telaPreta.classList.remove("hidden");
+    });
+  }
 
-    // Mostra a segunda fala (4s)
+  botaoFight.addEventListener("click", function () {
+    botaoFight.src = "https://files.catbox.moe/bs73m5.png";
     fala2.classList.remove("hidden");
 
-    // Após 4s, esconde fala e mostra vídeo
     setTimeout(() => {
       fala2.classList.add("hidden");
       video.classList.remove("hidden");
       video.play();
     }, 4000);
-
-    // Quando o vídeo terminar, mostrar a tela preta
-    video.addEventListener("ended", () => {
-      video.classList.add("hidden");
-      telaPreta.classList.remove("hidden");
-    });
   });
 </script>
 
