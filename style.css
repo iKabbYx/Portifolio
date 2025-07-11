@@ -551,20 +551,18 @@ section *:not(.overlay *),
 /* Video final */
 #video-final {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
   object-fit: cover;
   z-index: 10000;
+  background: black;
 }
+
 /* Tela Preta Final */
 #tela-preta-final {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
   background: black;
   z-index: 10001;
 }
