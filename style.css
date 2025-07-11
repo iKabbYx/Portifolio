@@ -551,10 +551,12 @@ section *:not(.overlay *),
 /* Video final */
 #video-final {
   position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
+  top: 0; 
+  left: 0;
+  width: 100vw; 
+  height: 100vh;
   object-fit: cover;
-  z-index: 10000;
+  z-index: 10000; /* ou 9999, o que for melhor */
   background: black;
 }
 
@@ -567,16 +569,6 @@ section *:not(.overlay *),
   z-index: 10001;
 }
 
-/* === ESTILO DO VÍDEO FINAL EM TELA CHEIA === */
-#video-final {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: 9999;
-}
 
 #video-final.hidden {
   display: none;
