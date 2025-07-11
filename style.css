@@ -194,6 +194,15 @@ section p {
   padding: 0 40px;
 }
 
+.curiosidades-container.centralizado {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+
 .caixa-projeto {
   background: rgba(0, 0, 0, 0.8);
   color: white;
