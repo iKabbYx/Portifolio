@@ -120,7 +120,7 @@
   
 <script>
   document.querySelector(".door-link").addEventListener("click", function (e) {
-  e.preventDefault(); 
+  e.preventDefault();
 
   const overlay = document.getElementById("interacao-overlay");
   const fala = document.getElementById("fala-gif");
@@ -130,43 +130,50 @@
   fala.style.display = "block";
   botoes.classList.add("hidden");
 
-  document.body.style.overflow = "hidden"; // Impede scroll da página
+  document.body.style.overflow = "hidden"; // trava scroll
 
   setTimeout(function () {
     fala.style.display = "none";
-    botoes.classList.remove("hidden"); // Mostra a barra e os botões ao mesmo tempo
-  }, 4000); // 4 segundos de fala
+    botoes.classList.remove("hidden");
+  }, 4000);
 });
 </script>
 
 <script>
   const botaoFight = document.getElementById("botao-fight");
-  const fala2 = document.getElementById("fala-gif-2");
-  const video = document.getElementById("video-final");
-  const telaPreta = document.getElementById("tela-preta-final");
+const fala2 = document.getElementById("fala-gif-2");
+const video = document.getElementById("video-final");
+const telaPreta = document.getElementById("tela-preta-final");
 
-  botaoFight.addEventListener("click", function () {
-    // Quebra o botão (imagem muda)
-    botaoFight.src = "https://files.catbox.moe/bs73m5.png";
+botaoFight.addEventListener("click", function () {
+  botaoFight.src = "https://files.catbox.moe/bs73m5.png"; // botão quebrado
+  fala2.classList.remove("hidden"); // mostra fala 2
 
-    // Mostra fala 2
-    fala2.classList.remove("hidden");
+  setTimeout(() => {
+    fala2.classList.add("hidden");
+    video.classList.remove("hidden");
+    video.currentTime = 0; // começa do zero
+    video.play().catch((err) => {
+      console.error("Erro ao tocar vídeo:", err);
+    });
 
-    // Espera 4 segundos
+    // trava scroll enquanto vídeo toca
+    document.body.style.overflow = "hidden";
+
     setTimeout(() => {
-      fala2.classList.add("hidden");      // Esconde fala
-      video.classList.remove("hidden");   // Mostra vídeo
-      video.play().catch(error => {
-        console.error("Erro ao reproduzir o vídeo:", error);
-        alert("Clique novamente para reproduzir o vídeo.");
-      });
-    }, 4000);
-  });
+      video.pause();
+      video.classList.add("hidden");
+      telaPreta.classList.remove("hidden");
+      // document.body.style.overflow = ""; // se quiser liberar scroll aqui
+    }, 9000); // vídeo dura 9 segundos
+  }, 4000); // fala2 dura 4 segundos
+});
 
-  video.addEventListener("ended", () => {
-    video.classList.add("hidden");             // Esconde vídeo
-    telaPreta.classList.remove("hidden");      // Mostra tela preta
-  });
+video.addEventListener("ended", () => {
+  video.classList.add("hidden");
+  telaPreta.classList.remove("hidden");
+  // document.body.style.overflow = "";
+});
 </script>
 
 </script>
