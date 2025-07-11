@@ -145,27 +145,30 @@
   const video = document.getElementById("video-final");
   const telaPreta = document.getElementById("tela-preta-final");
 
-  // Garante que não duplique o evento de 'ended'
-  if (video) {
-    video.addEventListener("ended", () => {
-      video.classList.add("hidden");
-      telaPreta.classList.remove("hidden");
-    });
-  }
-
   botaoFight.addEventListener("click", function () {
+    // Quebra o botão (imagem muda)
     botaoFight.src = "https://files.catbox.moe/bs73m5.png";
+
+    // Mostra fala 2
     fala2.classList.remove("hidden");
 
+    // Espera 4 segundos
     setTimeout(() => {
-      fala2.classList.add("hidden");
-      video.classList.remove("hidden");
+      fala2.classList.add("hidden");      // Esconde fala
+      video.classList.remove("hidden");   // Mostra vídeo
       video.play().catch(error => {
-        console.error("Erro ao tentar reproduzir o vídeo:", error);
-        alert("Seu navegador bloqueou a reprodução automática do vídeo. Tente clicar novamente.");
+        console.error("Erro ao reproduzir o vídeo:", error);
+        alert("Clique novamente para reproduzir o vídeo.");
       });
     }, 4000);
   });
+
+  video.addEventListener("ended", () => {
+    video.classList.add("hidden");             // Esconde vídeo
+    telaPreta.classList.remove("hidden");      // Mostra tela preta
+  });
+</script>
+
 </script>
 </body>
 </html>
