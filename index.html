@@ -110,7 +110,15 @@
     </div>
   </div>
 
-  <script>
+<!-- Vídeo com som (não muted) -->
+<video id="video-final" class="hidden" playsinline>
+  <source src="https://iframe.mediadelivery.net/play/466194/1f2a3c94-70b1-4b75-932b-963efd789cfc" type="video/mp4">
+</video>
+
+<!-- Tela preta após vídeo -->
+<div id="tela-preta-final" class="hidden"></div>
+  
+<script>
   document.querySelector(".door-link").addEventListener("click", function (e) {
   e.preventDefault(); 
 
@@ -159,15 +167,5 @@
     }, 4000);
   });
 </script>
-
-
-
-<!-- Vídeo com som (não muted) -->
-<video id="video-final" class="hidden" playsinline>
-  <source src="https://files.catbox.moe/jxy6bk.mp4" type="video/mp4">
-</video>
-
-<!-- Tela preta após vídeo -->
-<div id="tela-preta-final" class="hidden"></div>
 </body>
 </html>
